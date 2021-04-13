@@ -1,8 +1,8 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,10 +20,6 @@ public class Google {
         WebDriver driver = new ChromeDriver();
         driver.get("http://google.com");
 
-        // Клик в строку поиска
-        // WebElement input = driver.findElement(By.xpath("input[@aria-label='Найти']"));
-        // input.click();
-
         // Клик в кнопку вызова экранной клавиатуры
         driver.findElement(By.cssSelector("div[aria-label='Экранная клавиатура']")).click();
         // Явное ожидание появления экранной клавиатуры
@@ -40,5 +36,8 @@ public class Google {
 
         // Закрыть экранную клавиатуру
         driver.findElement(By.cssSelector(".vk-t-btns")).click();
+
+        // Старт поиска
+        driver.findElement(By.cssSelector("input[aria-label='Найти']")).sendKeys("", Keys.ENTER);
     }
 }

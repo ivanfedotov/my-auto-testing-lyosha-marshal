@@ -2,9 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.lang.System;
+
 import java.time.Duration;
 
 /*
@@ -18,9 +16,9 @@ public class Avito {
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
 
+        // Запрос
         WebDriver driver = new ChromeDriver();
-        // Неявное ожидание
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Неявное ожидание
         driver.get("https://www.avito.ru/rossiya/avtomobili");
 
         System.out.println("Бренд: \"" + brand + "\"");
