@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts</title>
+</head>
+<body>
+
+    <script>
+        function myFunc() { 
+            result = prompt('Alert 2');
+            alert(result);
+        }
+    </script>
+
+    <div>
+        <a href="#" id="a" onclick="alert('Alert 1')">Link 1</a>
+        <a href="#" id="b" onclick="myFunc()">Link 2</a>
+        <a href="#" id="c" onclick="confirm('Alert 3')">Link 3</a>
+    </div>
+
+</body>
+</html>
