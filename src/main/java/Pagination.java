@@ -13,16 +13,15 @@ import java.util.List;
  */
 public class Pagination {
     public static void main(String[] args) {
-        // Идентификатор пагинатора
+        // Идентификатор пагинатора со страницы проекта PAGINATION.JS
         String id = "demo1"; // demo1, demo7, demo8, demo12
 
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        // Ожидание при загрузки новой страницы
+        // Ожидание для загрузки новой страницы пагинатора
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         try {
