@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <!--test name="class-testing">
+        <classes>
+            <class name="DemoTestNG.demoTests"/>
+        </classes>
+    </test-->
+
+    <!-- test name="package-DemoTestNG" preserve-order="true" verbose="2">
+        <packages>
+            <package name="DemoTestNG"></package>
+        </packages>
+    </test -->
+
+    <test name="group-testing" preserve-order="true" verbose="2">
+        <groups>
+            <run>
+                <!--
+                    "demo" { "drivers"... }
+                    "local" / "web" { "google", "yandex", "avito"... }
+                    "interactive" { "grabber"... }
+                    "js"
+                -->
+                <include name="demo"></include>
+                <include name="web"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="DemoTestNG.driversTests"></class>
+            <class name="DemoTestNG.demoTests"></class>
+            <class name="Alerts"></class>
+            <class name="Avito"></class>
+            <class name="CheckTitle"></class>
+            <class name="DragAndDrop"></class>
+            <class name="Google"></class>
+            <class name="JSvsADV"></class>
+            <class name="Pagination"></class>
+            <class name="Windows"></class>
+            <class name="Yandex"></class>
+        </classes>
+    </test>
+
+</suite>
