@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -9,7 +10,9 @@ import java.time.Duration;
  * Тест 2 - Поиск по марке автомобиля количества объявлений на AVITO.RU
  */
 public class Avito {
-    public static void main(String[] args) {
+
+    @Test (groups = {"web", "avito", "grabber", "interactive"})
+    public static void main() {
         // Марка автомобиля
         String brand = "BMW"; // Audi, BMW, Chevrolet, Ford, Hyundai, Nissan, Skoda, Subaru, Toyota, Volvo, ВАЗ (LADA)
 
@@ -37,5 +40,6 @@ public class Avito {
         String count = categoryCount.getText();
         System.out.println("Количество объявлений: " + count);
 
+        driver.quit();
     }
 }

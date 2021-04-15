@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -13,7 +14,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
  * Тест 6 - Ожидания и работа с модальными окнами ("alert", "prompt" и "confirm")
  */
 public class Alerts {
-    public static void main(String[] args) {
+
+    @Test (groups = {"local", "interactive"})
+    public static void main() {
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();

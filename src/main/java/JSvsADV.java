@@ -1,6 +1,7 @@
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -8,7 +9,9 @@ import java.time.Duration;
  * Тест 8 - Удаление блока рекламы на YANDEX.RU через JavaScript
  */
 public class JSvsADV {
-    public static void main(String[] args) {
+
+    @Test (groups = {"web", "yandex", "js", "interactive"})
+    public static void main() {
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();

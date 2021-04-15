@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.Set;
@@ -12,7 +13,9 @@ import java.util.Set;
  * Тест 7 - Запросы в разных окнах к GOOGLE.COM и к YANDEX.RU
  */
 public class Windows {
-    public static void main(String[] args) {
+
+    @Test (groups = {"web", "google", "yandex", "js", "interactive"})
+    public static void main() {
         // Поисковый запрос
         String word = "Selenium WebDriver";
 

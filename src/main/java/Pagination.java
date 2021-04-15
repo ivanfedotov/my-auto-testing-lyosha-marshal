@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
@@ -12,7 +13,9 @@ import java.util.List;
  * Тест 5 - Проход по пагинатору PAGINATION.JS с выводом всех значений с его страниц
  */
 public class Pagination {
-    public static void main(String[] args) {
+
+    @Test (groups = {"web", "js", "interactive"})
+    public static void main() {
         // Идентификатор пагинатора со страницы проекта PAGINATION.JS
         String id = "demo1"; // demo1, demo7, demo8, demo12
 
