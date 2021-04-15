@@ -15,7 +15,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
  */
 public class Alerts {
 
-    @Test (groups = {"local", "interactive"})
+    @Test (groups = {"local", "alerts", "interactive"})
     public static void main() {
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");

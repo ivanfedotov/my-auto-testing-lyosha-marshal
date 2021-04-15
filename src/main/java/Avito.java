@@ -11,7 +11,7 @@ import java.time.Duration;
  */
 public class Avito {
 
-    @Test (groups = {"web", "avito", "grabber", "interactive"})
+    @Test (groups = {"web", "avito", "interactive", "grabber"})
     public static void main() {
         // Марка автомобиля
         String brand = "BMW"; // Audi, BMW, Chevrolet, Ford, Hyundai, Nissan, Skoda, Subaru, Toyota, Volvo, ВАЗ (LADA)

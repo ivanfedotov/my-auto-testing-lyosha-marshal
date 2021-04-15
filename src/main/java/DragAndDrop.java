@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  */
 public class DragAndDrop {
 
-    @Test (groups = {"web", "interactive"})
+    @Test (groups = {"web", "crossbrowsertesting", "interactive"})
     public static void main() throws InterruptedException {
 
         // Подключение драйвера Google Chrome

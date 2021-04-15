@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Pagination {
 
-    @Test (groups = {"web", "js", "interactive"})
+    @Test (groups = {"web", "pagination", "interactive"})
     public static void main() {
         // Идентификатор пагинатора со страницы проекта PAGINATION.JS
         String id = "demo1"; // demo1, demo7, demo8, demo12

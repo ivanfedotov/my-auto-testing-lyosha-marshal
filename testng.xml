@@ -18,13 +18,13 @@
         <groups>
             <run>
                 <!--
-                    "demo" { "drivers"... }
-                    "local" / "web" { "google", "yandex", "avito"... }
-                    "interactive" { "grabber"... }
-                    "js"
+                    "interactive"
+                    "web" { "grabber", "google", "yandex", "avito", "pagination", "crossbrowsertesting", "js" }
+                    "local" { "test_N", "alerts" }
+                    "demo" { "drivers", "test_N" }
                 -->
-                <include name="demo"></include>
-                <include name="web"></include>
+                <include name="test_N"></include>
+                <include name="js"></include>
             </run>
         </groups>
         <classes>
