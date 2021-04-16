@@ -8,7 +8,7 @@ import java.time.Duration;
 /*
  * Тест 8 - Удаление блока рекламы на YANDEX.RU через JavaScript
  */
-public class JSvsADV {
+public class JSvsYandexADV {
 
     @Test (groups = {"web", "yandex", "js", "interactive"})
     public static void main() {
@@ -28,7 +28,7 @@ public class JSvsADV {
                     "('.container.container__banner.container__line.container__banner_flex')" +
                     ".setAttribute('style', 'display: none')"
             );
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

@@ -15,7 +15,7 @@ public class driversTests {
         String url = "http://ya.ru/";
 
         // Подключение драйвера Microsoft Edge
-        System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\MicrosoftWebDriver.exe");
+        System.setProperty("webdriver.edge.driver", "C:\\TwoWindowsSearch\\System32\\MicrosoftWebDriver.exe");
         WebDriver driverEdge = new EdgeDriver();
         driverEdge.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 

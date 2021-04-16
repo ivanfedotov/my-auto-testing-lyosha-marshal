@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All Test Suite">
-    <!--test name="class-testing">
-        <classes>
-            <class name="DemoTestNG.demoTests"/>
-        </classes>
-    </test-->
+<!--    <test name="class-DemoTestNG.demoTests">-->
+<!--        <classes>-->
+<!--            <class name="DemoTestNG.demoTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <!-- test name="package-DemoTestNG" preserve-order="true" verbose="2">
-        <packages>
-            <package name="DemoTestNG"></package>
-        </packages>
-    </test -->
+<!--    <test name="package-DemoTestNG" preserve-order="true" verbose="2">-->
+<!--        <packages>-->
+<!--            <package name="DemoTestNG"/>-->
+<!--        </packages>-->
+<!--    </test>-->
 
-    <test name="group-testing" preserve-order="true" verbose="2">
+    <test name="all-tests-by-group" preserve-order="true" verbose="1">
         <groups>
             <run>
                 <!--
@@ -23,23 +23,40 @@
                     "local" { "test_N", "alerts" }
                     "demo" { "drivers", "test_N" }
                 -->
-                <include name="test_N"></include>
-                <include name="js"></include>
+                <include name="test_N"/>
             </run>
         </groups>
         <classes>
-            <class name="DemoTestNG.driversTests"></class>
-            <class name="DemoTestNG.demoTests"></class>
-            <class name="Alerts"></class>
-            <class name="Avito"></class>
-            <class name="CheckTitle"></class>
-            <class name="DragAndDrop"></class>
-            <class name="Google"></class>
-            <class name="JSvsADV"></class>
-            <class name="Pagination"></class>
-            <class name="Windows"></class>
-            <class name="Yandex"></class>
+            <class name="DemoTestNG.driversTests"/>
+            <class name="DemoTestNG.demoTests"/>
+            <class name="Alerts"/>
+            <class name="AvitoAuto"/>
+            <class name="CheckTitleSite"/>
+            <class name="DragAndDrop"/>
+            <class name="GoogleKeyboard"/>
+            <class name="JSvsYandexADV"/>
+            <class name="Pagination"/>
+            <class name="TwoWindowsSearch"/>
+            <class name="YandexImages"/>
         </classes>
+        <parameter name="title" value="Добро пожаловать | ВКонтакте"/>
+        <parameter name="url" value="https://vk.com/"/>
+        <parameter name="query" value="Selenium WebDriver"/>
     </test>
+
+<!--    <test name="title-test" preserve-order="true" verbose="1">-->
+<!--        <classes>-->
+<!--            <class name="CheckTitleSite"/>-->
+<!--        </classes>-->
+<!--        <parameter name="title" value="Добро пожаловать | ВКонтакте"/>-->
+<!--        <parameter name="url" value="https://vk.com/"/>-->
+<!--    </test>-->
+
+<!--    <test name="search-queries" preserve-order="true" verbose="1">-->
+<!--        <classes>-->
+<!--            <class name="TwoWindowsSearch"/>-->
+<!--        </classes>-->
+<!--        <parameter name="query" value="Java"/>-->
+<!--    </test>-->
 
 </suite>

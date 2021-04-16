@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -9,22 +10,36 @@ import java.time.Duration;
 /*
  * Тест 2 - Поиск по марке автомобиля количества объявлений на AVITO.RU
  */
-public class Avito {
+public class AvitoAuto {
 
-    @Test (groups = {"web", "avito", "interactive", "grabber"})
-    public static void main() {
-        // Марка автомобиля
-        String brand = "BMW"; // Audi, BMW, Chevrolet, Ford, Hyundai, Nissan, Skoda, Subaru, Toyota, Volvo, ВАЗ (LADA)
+    // Бренды автомобилей
+    @DataProvider (name = "autoBrands")
+    public static Object[][] autoBrands () {
+        return new Object[][] {
+                {"Audi"},
+                {"BMW"},
+//                {"Chevrolet"},
+//                {"Ford"},
+//                {"Hyundai"},
+//                {"Nissan"},
+//                {"Skoda"},
+//                {"Subaru"},
+//                {"Toyota"},
+//                {"Volvo"},
+//                {"ВАЗ (LADA)"}
+        };
+    }
+
+    @Test (groups = {"web", "avito", "interactive", "grabber"}, dataProvider = "autoBrands")
+    public static void main(String brand) {
+        System.out.println("Бренд: \"" + brand + "\"");
 
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
-
-        // Запрос
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Неявное ожидание
-        driver.get("https://www.avito.ru/rossiya/avtomobili");
 
-        System.out.println("Бренд: \"" + brand + "\"");
+        driver.get("https://www.avito.ru/rossiya/avtomobili");
 
         // Поиск ссылки на категорию
         WebElement categoryURL = driver.findElement(By.cssSelector(

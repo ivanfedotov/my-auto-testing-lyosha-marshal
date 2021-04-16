@@ -10,7 +10,7 @@ import java.time.Duration;
 /*
  * Тест 3 - Поиск похожих картинок на YANDEX.RU
  */
-public class Yandex {
+public class YandexImages {
 
     @Test (groups = {"web", "yandex", "interactive"})
     public static void main() {

@@ -1,17 +1,20 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 /*
  * Тест 9 - Проверка <title> страницы (TestNG)
  */
-public class CheckTitle {
+public class CheckTitleSite {
 
-    @Test (groups = {"web", "yandex", "grabber"})
-    public static void checkTitleOfSite() {
-        System.out.println("[demo] Test 3");
-/*
-        // URL страницы и проверяемое значение тега "title"
-        String url = "http://yandex.ru/", title = "Яндекс";
-
+    // URL страницы и проверяемое значение тега "title"
+    @Parameters ({"url", "title"})
+    @Test (groups = {"web", "grabber"})
+    public static void main(String url, String title) {
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -30,6 +33,6 @@ public class CheckTitle {
         } finally {
             driver.quit();
         }
-*/
+
     }
 }

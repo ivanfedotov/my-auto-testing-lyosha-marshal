@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -12,12 +13,11 @@ import java.util.Set;
 /*
  * Тест 7 - Запросы в разных окнах к GOOGLE.COM и к YANDEX.RU
  */
-public class Windows {
+public class TwoWindowsSearch {
 
+    @Parameters ({"query"})
     @Test (groups = {"web", "google", "yandex", "js", "interactive"})
-    public static void main() {
-        // Поисковый запрос
-        String word = "Selenium WebDriver";
+    public static void main(String query) {
 
         // Подключение драйвера Google Chrome
         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
@@ -36,7 +36,7 @@ public class Windows {
             driver.get("http://google.com");
             Thread.sleep(3000);
             driver.findElement(By.cssSelector("input[aria-label='Найти']"))
-                    .sendKeys(word, Keys.ENTER);
+                    .sendKeys(query, Keys.ENTER);
             System.out.println("[GOOGLE.COM] " +
                 driver.findElement(By.cssSelector("#result-stats"))
                     .getText()
@@ -65,7 +65,7 @@ public class Windows {
             // Поиск количества ответов на YANDEX.RU
             driver.get("https://ya.ru/");
             driver.findElement(By.cssSelector(".input__control.input__input.mini-suggest__input"))
-                    .sendKeys(word, Keys.ENTER);
+                    .sendKeys(query, Keys.ENTER);
             System.out.println("[YANDEX.RU] " +
                 driver.findElement(By.cssSelector(".serp-adv__found"))
                     .getText()

@@ -12,7 +12,7 @@ import java.time.Duration;
 /*
  * Тест 1 - ввод запроса на GOOGLE.COM через экранную клавиатуру
  */
-public class Google {
+public class GoogleKeyboard {
 
     @Test (groups = {"web", "google", "interactive"})
     public static void main() {
@@ -44,7 +44,7 @@ public class Google {
             // Старт поиска
             driver.findElement(By.cssSelector("input[aria-label='Найти']")).sendKeys("", Keys.ENTER);
 
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             driver.quit();
         } catch (InterruptedException e) {
             e.printStackTrace();
