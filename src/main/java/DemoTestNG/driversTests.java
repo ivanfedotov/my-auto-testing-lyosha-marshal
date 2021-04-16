@@ -10,12 +10,16 @@ import java.time.Duration;
 
 public class driversTests {
 
-    @Test (groups = {"demo", "drivers", "web", "yandex"})
+    @Test (
+            groups = {"demo", "drivers", "web", "yandex"},
+            dependsOnGroups = {"test_N"},
+            alwaysRun = false
+    )
     public static void main () {
         String url = "http://ya.ru/";
 
         // Подключение драйвера Microsoft Edge
-        System.setProperty("webdriver.edge.driver", "C:\\TwoWindowsSearch\\System32\\MicrosoftWebDriver.exe");
+        System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\MicrosoftWebDriver.exe");
         WebDriver driverEdge = new EdgeDriver();
         driverEdge.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
@@ -37,13 +41,12 @@ public class driversTests {
             driverEdge.get(url);
             driverFirefox.get(url);
             driverChrome.get(url);
-            Thread.sleep(5000);
+            Thread.sleep(3000);
 
             // Закрыть каждый броузер
             driverEdge.quit();
             driverFirefox.quit();
             driverChrome.quit();
-            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

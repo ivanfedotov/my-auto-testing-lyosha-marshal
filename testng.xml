@@ -16,16 +16,17 @@
 
     <test name="all-tests-by-group" preserve-order="true" verbose="1">
         <groups>
+            <!--
+                "interactive"
+                "web" { "grabber", "google", "yandex", "avito", "pagination", "crossbrowsertesting", "js" }
+                "local" { "test_N", "alerts" }
+                "demo" { "drivers", "test_N" }
+            -->
             <run>
-                <!--
-                    "interactive"
-                    "web" { "grabber", "google", "yandex", "avito", "pagination", "crossbrowsertesting", "js" }
-                    "local" { "test_N", "alerts" }
-                    "demo" { "drivers", "test_N" }
-                -->
-                <include name="test_N"/>
+                <include name="drivers"/>
             </run>
         </groups>
+
         <classes>
             <class name="DemoTestNG.driversTests"/>
             <class name="DemoTestNG.demoTests"/>
@@ -39,9 +40,11 @@
             <class name="TwoWindowsSearch"/>
             <class name="YandexImages"/>
         </classes>
+
         <parameter name="title" value="Добро пожаловать | ВКонтакте"/>
         <parameter name="url" value="https://vk.com/"/>
         <parameter name="query" value="Selenium WebDriver"/>
+
     </test>
 
 <!--    <test name="title-test" preserve-order="true" verbose="1">-->

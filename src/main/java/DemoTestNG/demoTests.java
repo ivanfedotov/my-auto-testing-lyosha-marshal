@@ -18,8 +18,11 @@ public class demoTests {
         System.out.println("[demo] Test 1 " + e1 + " " + e2);
     }
 
-    @Test (groups = {"demo", "test_N", "local"})
+    @Test (
+            groups = {"demo", "test_N", "local"},
+            dependsOnMethods = {"demoTest1"}, alwaysRun = false
+    )
     public void demoTest2() {
-        System.out.println("[demo] Test 2");
+        System.out.println("[demo] Test 2 (Зависимый тест)");
     }
 }
