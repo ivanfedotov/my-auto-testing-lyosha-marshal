@@ -5,7 +5,7 @@
 `web` = `google`+`yandex`+`avito`+`pagination`+`crossbrowsertesting`+`grabber`+`js`  
 `local` = `test_N`+`alerts`  
 `demo` = `test_N`+`drivers`  
-`interactive`  
+`interactive`, `fail`  
 
 
 

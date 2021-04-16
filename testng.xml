@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="All Test Suite">
 <!--    <test name="class-DemoTestNG.demoTests">-->
@@ -17,13 +17,13 @@
     <test name="all-tests-by-group" preserve-order="true" verbose="1">
         <groups>
             <!--
-                "interactive"
+                "interactive", "fail"
                 "web" { "grabber", "google", "yandex", "avito", "pagination", "crossbrowsertesting", "js" }
                 "local" { "test_N", "alerts" }
                 "demo" { "drivers", "test_N" }
             -->
             <run>
-                <include name="drivers"/>
+                <include name="fail"/>
             </run>
         </groups>
 

@@ -1,5 +1,6 @@
 package DemoTestNG;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,10 @@ public class demoTests {
         };
     }
 
-    @Test (groups = {"demo", "test_N", "local"}, dataProvider = "demoDP")
+    @Test (
+            groups = {"demo", "test_N", "local"},
+            dataProvider = "demoDP"
+    )
     public void demoTest1(String e1, Integer e2) {
         System.out.println("[demo] Test 1 " + e1 + " " + e2);
     }
@@ -25,4 +29,14 @@ public class demoTests {
     public void demoTest2() {
         System.out.println("[demo] Test 2 (Зависимый тест)");
     }
+
+    @Test (
+            groups = {"fail"},
+            retryAnalyzer = Retry.class
+    )
+    public void testFail() {
+        System.out.println("[demo] Test 3 (Ошибка и посторения)");
+        Assert.fail();
+    }
+
 }
