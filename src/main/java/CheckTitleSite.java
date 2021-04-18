@@ -1,10 +1,9 @@
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+import static Modules.WebDriverCreator.webDriverCreator;
 
 /*
  * Тест 9 - Проверка <title> страницы (TestNG)
@@ -15,10 +14,8 @@ public class CheckTitleSite {
     @Parameters ({"url", "title"})
     @Test (groups = {"web", "grabber"})
     public static void main(String url, String title) {
-        // Подключение драйвера Google Chrome
-        System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        // Подключение веб-драйвера на выбор: "Chrome", "Firefox", "Edge"
+        WebDriver driver = webDriverCreator("Chrome");
 
         try {
             driver.get(url);

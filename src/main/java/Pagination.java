@@ -1,7 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
@@ -9,6 +8,8 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
+
+import static Modules.WebDriverCreator.webDriverCreator;
 
 /*
  * Тест 5 - Проход по пагинатору PAGINATION.JS с выводом всех значений с его страниц
@@ -30,11 +31,8 @@ public class Pagination {
 
     @Test (groups = {"web", "pagination", "interactive"}, dataProvider = "idPaginator")
     public static void main(String id) {
-
-        // Подключение драйвера Google Chrome
-        System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        // Подключение веб-драйвера на выбор: "Chrome", "Firefox", "Edge"
+        WebDriver driver = webDriverCreator("Chrome");
 
         // Ожидание для загрузки новой страницы пагинатора
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

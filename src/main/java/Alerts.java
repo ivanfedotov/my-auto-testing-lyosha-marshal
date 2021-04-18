@@ -2,12 +2,12 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+import static Modules.WebDriverCreator.webDriverCreator;
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
 /*
@@ -16,11 +16,9 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 public class Alerts {
 
     @Test (groups = {"local", "alerts", "interactive"})
-    public static void main() {
-        // Подключение драйвера Google Chrome
-        System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public void main() {
+        // Подключение веб-драйвера на выбор: "Chrome", "Firefox", "Edge"
+        WebDriver driver = webDriverCreator("Chrome");
 
         // Явные ожидания для alerts
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

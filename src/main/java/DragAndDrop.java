@@ -1,9 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+
+import static Modules.WebDriverCreator.webDriverCreator;
 
 /*
  * Тест 4 - Перетаскивание одного элемента на другой (DRAG-AND-DROP)
@@ -12,10 +13,8 @@ public class DragAndDrop {
 
     @Test (groups = {"web", "crossbrowsertesting", "interactive"})
     public static void main() throws InterruptedException {
-
-        // Подключение драйвера Google Chrome
-        System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        // Подключение веб-драйвера на выбор: "Chrome", "Firefox", "Edge"
+        WebDriver driver = webDriverCreator("Chrome");
 
         try {
             Thread.sleep(2000); // Ожидание 2 секунды

@@ -23,7 +23,7 @@
                 "demo" { "drivers", "test_N" }
             -->
             <run>
-                <include name="fail"/>
+                <include name="fail"/>>
             </run>
         </groups>
 

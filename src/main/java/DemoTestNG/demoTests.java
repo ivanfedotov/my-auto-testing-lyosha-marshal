@@ -1,5 +1,6 @@
 package DemoTestNG;
 
+import Modules.RetryTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -32,10 +33,10 @@ public class demoTests {
 
     @Test (
             groups = {"fail"},
-            retryAnalyzer = Retry.class
+            retryAnalyzer = RetryTest.class
     )
     public void testFail() {
-        System.out.println("[demo] Test 3 (Ошибка и посторения)");
+        System.out.println("[demo] Test 3 (Ошибка и повторение)");
         Assert.fail();
     }
 

@@ -1,11 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.time.Duration;
+
+import static Modules.WebDriverCreator.webDriverCreator;
 
 /*
  * Тест 3 - Поиск похожих картинок на YANDEX.RU
@@ -17,14 +17,12 @@ public class YandexImages {
         // Путь к картинке относительно папки проекта с названием файла
         String image = "\\src\\main\\resources\\ava.jpg";
 
-        // Абсолютный путьк картинке
+        // Абсолютный путь к картинке
         File file = new File("");
         String path = file.getAbsolutePath() + image;
 
-        // Подключение драйвера Google Chrome
-        System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        // Подключение веб-драйвера на выбор: "Chrome", "Firefox", "Edge"
+        WebDriver driver = webDriverCreator("Chrome");
 
         try {
             driver.get("https://yandex.ru/images/");
